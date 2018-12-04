@@ -2,20 +2,25 @@
 import React from "react";
 
 export default class FoodBox extends React.Component{
+  constructor(props){
+    super(props)
+
+  }
   render(){
+    console.log(this.props)
       return (
         <div className="box">
         <article className="media">
           <div className="media-left">
             <figure className="image is-64x64">
-              <img src="https://i.imgur.com/eTmWoAN.png" />
+              <img src={this.props.food.image} />
             </figure>
           </div>
           <div className="media-content">
             <div className="content">
               <p>
-                <strong>Pizza</strong> <br />
-                <small>400 cal</small>
+                <strong>{this.props.food.name}</strong> <br />
+                <small>{this.props.food.calories}</small>
               </p>
             </div>
           </div>
